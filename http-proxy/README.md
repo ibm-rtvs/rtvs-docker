@@ -25,5 +25,5 @@ You now have a running HTTP Proxy.
 #Connection details
 The connection details are:
 
-* Host: ```$(docker-machine ip)```
+* Host: The hostname or ip address of the docker host. If you're using Docker Machine you can find this using ```$(docker-machine ip)```
 * Port: ```3128```
