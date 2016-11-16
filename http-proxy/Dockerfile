@@ -26,7 +26,9 @@ RUN ln -s /lib /lib64 \
 # hook up RTCP in registration.xml to the RULE_SERVER env variable
   && sed -i 's#.*\#!.*#&\nsed -i "s!http://localhost:7819/RTCP!\$RULE_SERVER!" /opt/HttpTcpProxy/registration.xml#' /opt/HttpTcpProxy/startup.sh \
 # stop the container on request by getting the jvm to handle the signal
-  && sed -i 's#^\("\$_RUNJAVA\)#exec \1#' /opt/HttpTcpProxy/startup.sh
+  && sed -i 's#^\("\$_RUNJAVA\)#exec \1#' /opt/HttpTcpProxy/startup.sh \
+# bind to all container addresses
+  && sed -i 's/bind-address=".*"/bind-address=""/' /opt/HttpTcpProxy/registration.xml
 
 # http proxy port
 EXPOSE 3128
