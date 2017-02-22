@@ -1,5 +1,7 @@
 FROM tatsushid/tinycore:7.2-x86_64
 
+USER root
+
 # we expect the user to either set the RTCP RULE_SERVER location at container creation 
 # time or at build time.
 ENV BIN_SERVER=ftp://public.dhe.ibm.com/software/spcn/continuoustest \

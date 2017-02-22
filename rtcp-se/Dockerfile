@@ -1,5 +1,7 @@
 FROM tatsushid/tinycore:7.2-x86_64
 
+USER root
+
 ENV BIN_SERVER=ftp://public.dhe.ibm.com/software/spcn/continuoustest
 
 # fix image to allow 64bit executables to launch
